@@ -34,7 +34,7 @@ const EasterEgg = ({navigation, statePreferences}) => {
     return (
         <View style={[styles.container, containerStyle]}>
             <SvgImage
-                source={require('../svg/loop.svg')}
+                source={require('../assets/animations/loop.svg')}
                 style={styles.svg}
             />
         </View>

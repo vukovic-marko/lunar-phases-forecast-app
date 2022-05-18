@@ -73,13 +73,13 @@ const Home = ({navigation, stateMoon, statePreferences, calculate, clear}) => {
         if (colorScheme === 'dark') {
             return(
                 <View style={[styles.container, containerStyle]}>
-                    <SvgImage source={require('../images/loading-white.svg')} />
+                    <SvgImage source={require('../assets/animations/loading-light.svg')} />
                 </View>
             )
         } else {
             return(
                 <View style={[styles.container, containerStyle]}>
-                    <SvgImage source={require('../images/loading-grey.svg')} />
+                    <SvgImage source={require('../assets/animations/loading-dark.svg')} />
                 </View>
             )
         }
@@ -127,8 +127,8 @@ const styles = StyleSheet.create({
     },
     buttons: {
         flexDirection: 'row',
-        width: '40%',
-        justifyContent: 'space-between',
+        width: '50%',
+        justifyContent: 'space-around',
         alignItems: 'center'
     },
     small: {
