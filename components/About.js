@@ -1,5 +1,6 @@
 import React from 'react'
 import { ScrollView, Text, StyleSheet } from 'react-native'
+import { nativeApplicationVersion } from 'expo-application'
 
 import { useColorScheme } from 'react-native-appearance';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -45,6 +46,8 @@ const About = ({statePreferences}) => {
             <Text style={[styles.text,textStyle]}>Author: Marko</Text>
             <Text style={[styles.text,textStyle]}>Written in React Native using Expo</Text>
             <Text style={[styles.text,textStyle]}>Icons from loading.io</Text>
+            <Text></Text>
+            <Text style={[styles.text,textStyle]}>Application Version: {nativeApplicationVersion}</Text>
         </ScrollView>
         </SafeAreaView>
     )
