@@ -24,7 +24,8 @@
         "foregroundImage": "./assets/icons/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"        
       },
-      "package": "com.yourcompany.yourappname",
+      "permissions": ["ACCESS_FINE_LOCATION", "VIBRATE"],
+      "package": "com.markiapp.lunarphases",
       "versionCode": 1
     },
     "web": {

@@ -1278,6 +1278,11 @@
   resolved "https://registry.yarnpkg.com/@emotion/unitless/-/unitless-0.7.5.tgz#77211291c1900a700b8a78cfafda3160d76949ed"
   integrity sha512-OWORNpfjMsSSUBVrRBVGECkhWcULOAJz9ZW8uK9qgxD+87M7jHRcvh/A96XXNhXTLmKcoYSQtBEX7lHMO7YRwg==
 
+"@expo-google-fonts/montserrat@^0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@expo-google-fonts/montserrat/-/montserrat-0.2.2.tgz#1c2522b6fcacf7a3b561db2f3fd7a90a52613db1"
+  integrity sha512-kpK++6mnyPPNVuZQ5ScU/YmvNsbDQGNgxwPgkmAKFrctAhfwg4KxotmmuNnn2ZaKLPtGYjP8/M8JIO3/tAm9ag==
+
 "@expo/babel-preset-cli@0.2.18":
   version "0.2.18"
   resolved "https://registry.yarnpkg.com/@expo/babel-preset-cli/-/babel-preset-cli-0.2.18.tgz#136acf8a0efe259e29ebc614b68552e5acb47d86"

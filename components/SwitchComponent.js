@@ -38,7 +38,7 @@ const SwitchComponent = ({title, value, onValueChange, statePreferences}) => {
 
 const styles = StyleSheet.create({
     text: {
-
+        fontFamily: 'Montserrat_400Regular'
     },
     lightText: {
         color: 'black'

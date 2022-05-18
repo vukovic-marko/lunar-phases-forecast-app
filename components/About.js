@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#383838'
     }, 
     text: {
-
+        fontFamily: 'Montserrat_300Light'
     },
     lightText: {
         color: 'black'

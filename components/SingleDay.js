@@ -11,8 +11,6 @@ import { FirstQuarter, FullMoon,
    
 const SingleDay = ({value, statePreferences}) => {
 
-    // let colorScheme = useColorScheme();
-
     let colorScheme = useColorScheme();
 
     if (statePreferences.theme !== 'automatic') {
@@ -76,7 +74,7 @@ const styles = StyleSheet.create({
     textView: {
         flex: 2,
         justifyContent: 'center',
-        alignItems:'center'
+        alignItems:'flex-start'
     },
     imageView: {
         flex: 1
@@ -87,7 +85,7 @@ const styles = StyleSheet.create({
         height: 60
     },
     title: {
-
+        fontFamily: 'Montserrat_400Regular'
     },
     lightTitle: {
         color: 'black'

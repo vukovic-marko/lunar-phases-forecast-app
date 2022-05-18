@@ -13,10 +13,6 @@ import { FirstQuarter, FullMoon,
 
 const Today = ({phase, navigation, statePreferences}) => {
 
-    // let height = Math.round(Dimensions.get('window').width/Dimensions.get('window').height*50)+'%'
-
-    // let colorScheme = useColorScheme();
-
     let colorScheme = useColorScheme();
 
     if (statePreferences.theme !== 'automatic') {
@@ -76,8 +72,8 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     title: {
-        fontWeight: 'bold',
-        fontSize: 20
+        fontSize: 22,
+        fontFamily: 'Montserrat_700Bold'
     },
     lightTitle: {
         color: 'black'

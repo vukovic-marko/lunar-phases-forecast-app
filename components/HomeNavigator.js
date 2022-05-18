@@ -30,10 +30,10 @@ const HomeNavigator = ({statePreferences}) => {
 
     return (
         <NavigationContainer independent={true}>
-            <Stack.Navigator screenOptions={{animationEnabled: false, headerStyle: {backgroundColor: backgroundColor}, headerTintColor:textColor}}>
+            <Stack.Navigator screenOptions={{animationEnabled: false, headerStyle: {backgroundColor: backgroundColor}, headerTintColor:textColor, headerTitleAlign: 'center'}}>
                 <Stack.Screen options={{headerShown: false}}   name="Home" component={Home} />
-                <Stack.Screen name="Details" component={Details} />
-                <Stack.Screen name="EasterEgg" component={EasterEgg} />
+                <Stack.Screen name="Details" options={{headerTitleStyle: {fontFamily: 'Montserrat_500Medium'}}} component={Details} />
+                <Stack.Screen name="EasterEgg" options={{headerTitleStyle: {fontFamily: 'Montserrat_500Medium'}}} component={EasterEgg} />
             </Stack.Navigator>
         </NavigationContainer>
     )

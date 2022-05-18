@@ -65,7 +65,7 @@ const ListItem = ({item, statePreferences}) => {
                         backgroundColor={buttonBackgroundColor}
                         borderRadius={0}
                         onPress={() => {
-                            setTitle('Why is no moonrise listed for a specific date?');
+                            setTitle('Why isn\'t moonrise time listed for this date?');
                             setContent('On some days, the Moon does not rise. Because the Moon is constantly in motion, the time span from one moonrise to the next is a little longer than 24 hours. For example, if the Moon rises just before midnight on day 1, it may not rise again until just after midnight on day 3, meaning that day 2 does not have a moonrise.');
                             setVisible(true);
                         }}
@@ -89,7 +89,7 @@ const ListItem = ({item, statePreferences}) => {
                         backgroundColor={buttonBackgroundColor}
                         borderRadius={0}
                         onPress={() => {
-                            setTitle('Why is no moonset listed for a specific date?');
+                            setTitle('Why isn\'t moonset time listed for this date?');
                             setContent('On some days, the Moon does not set. Because the Moon is constantly in motion, the time span from one moonset to the next is a little longer than 24 hours. For example, if the Moon sets just before midnight on day 1, it may not set again until just after midnight on day 3, meaning that day 2 does not have a moonset.');
                             setVisible(true);
                         }}
@@ -111,7 +111,7 @@ const ListItem = ({item, statePreferences}) => {
                         backgroundColor={buttonBackgroundColor}
                         borderRadius={0}
                         onPress={() => {
-                            setTitle('Why is moonset earlier than moonrise?');
+                            setTitle('Why is moonset earlier than moonrise on this date?');
                             setContent('On some days, the Moon sets in the day after it\'s corresponding moonrise. In this case, a moonset happens before a moonrise, because the moonset actually corresponds to the moonrise of the previous day. To see the moonset corresponding to the moonrise of a current day, please refer to moonset time for the next day.')
                             setVisible(true);
                         }}
@@ -123,7 +123,7 @@ const ListItem = ({item, statePreferences}) => {
     return (
         <View style={[styles.item, itemStyle]}>
             <Dialog
-                dialogTitle={<DialogTitle textStyle={textStyle} hasTitleBar={false} title={title} />}
+                dialogTitle={<DialogTitle textStyle={[textStyle, {fontFamily: 'Montserrat_500Medium'}]} hasTitleBar={false} title={title} />}
                 rounded={false}
                 visible={visible}
                 dialogStyle={dialogStyle}
@@ -137,7 +137,7 @@ const ListItem = ({item, statePreferences}) => {
                 }}
             >
                 <DialogContent>
-                    <Text style={[textStyle, {fontSize: 16}]}>{content}</Text>
+                    <Text style={[textStyle, {fontSize: 16, fontFamily: 'Montserrat_400Regular'}]}>{content}</Text>
                 </DialogContent>
 
                     <TouchableHighlight
@@ -148,7 +148,7 @@ const ListItem = ({item, statePreferences}) => {
                     }}
                     >
                         <View style={{height: 40, margin:10, alignItems: 'center', justifyContent: 'center'}}>
-                            <Text style={[textStyle, {fontSize: 16, textAlign: 'center'}]}>OK</Text>
+                            <Text style={[textStyle, {fontSize: 16, textAlign: 'center', fontFamily: 'Montserrat_500Medium'}]}>OK</Text>
                         </View>
                     </TouchableHighlight>
             </Dialog>
@@ -192,7 +192,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#383838'
     },
     text: {
-        
+        fontFamily: 'Montserrat_400Regular'
     },
     lightText: {
         color: 'black'

@@ -18,16 +18,14 @@ import { clear } from '../actions/clear'
 
 const Home = ({navigation, stateMoon, statePreferences, calculate, clear}) => {
     const [errorMessage, setErrorMessage] = useState(null)
+    const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        if (stateMoon.updated == null || dayjs(stateMoon.updated).isBefore(dayjs(), 'date')) {
-            clear()
-            load()
-        }
+    useEffect(() => {      
+        clear()
+        load()
     }, []) 
 
-    async function load() {
-        
+    async function load() {  
         let { status } = await Location.requestPermissionsAsync();
 
         if(status !== 'granted') {
@@ -45,8 +43,8 @@ const Home = ({navigation, stateMoon, statePreferences, calculate, clear}) => {
         const c = current.format('YYYY-MM-DD')
         const e = end.format('YYYY-MM-DD')
 
-        await new Promise(r => setTimeout(r, 1000));
         calculate([c,e,latitude,longitude])
+        setLoading(false);
     }
 
     let colorScheme = useColorScheme();
@@ -71,7 +69,7 @@ const Home = ({navigation, stateMoon, statePreferences, calculate, clear}) => {
         textStyle = styles.darkText
     }
 
-    if(!stateMoon.moonphase) {
+    if(loading) {
         if (colorScheme === 'dark') {
             return(
                 <View style={[styles.container, containerStyle]}>
@@ -103,7 +101,7 @@ const Home = ({navigation, stateMoon, statePreferences, calculate, clear}) => {
                     <TouchableOpacity onPress={() => { navigation.navigate('Details') }} style={[styles.appButtonContainer, {backgroundColor: '#efe450'}]}>
                         <Text style={[styles.appButtonText, {color: '#455252'}]}>Details</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={ async () => { clear(); await load(); }} style={[styles.appButtonContainer, {backgroundColor: '#455252'}]}>
+                    <TouchableOpacity onPress={ async () => { setLoading(true); clear(); await load(); }} style={[styles.appButtonContainer, {backgroundColor: '#455252'}]}>
                         <Text style={[styles.appButtonText, {color: '#efe450'}]}>Update</Text>
                     </TouchableOpacity>
                 </View>
@@ -147,10 +145,11 @@ const styles = StyleSheet.create({
         fontSize: 15,
         color: "#fff",
         alignSelf: "center",
-        textTransform: "uppercase"
+        textTransform: "uppercase",
+        fontFamily: 'Montserrat_500Medium'
       },
       text: {
-
+        fontFamily: 'Montserrat_300Light'
       },
       lightText: {
         color: 'black'

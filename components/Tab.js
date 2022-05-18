@@ -1,7 +1,6 @@
 import React from 'react'
 import { Ionicons } from '@expo/vector-icons';
 
-
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import { useColorScheme } from 'react-native-appearance';
@@ -33,7 +32,7 @@ const Tab = ({statePreferences}) => {
     if (colorScheme == 'dark') {
       backgroundColor = '#383838'
       activeTintColor = '#ffffff'
-      inactiveTintColor = 'gray'
+      inactiveTintColor = 'gray' 
       borderTopColor = 'black'
       statusBarStyle = 'light'
 
@@ -42,11 +41,10 @@ const Tab = ({statePreferences}) => {
     return (
         <NavigationContainer>
             <StatusBar style={statusBarStyle} />
-
               <BottomTab.Navigator 
               initialRouteName="Home"
               backBehavior="initialRoute" 
-              tabBarOptions={{activeTintColor: activeTintColor, inactiveTintColor: inactiveTintColor, style: {backgroundColor: backgroundColor, borderTopColor: borderTopColor}}} 
+              tabBarOptions={{ labelStyle: {fontFamily: "Montserrat_300Light"}, activeTintColor: activeTintColor, inactiveTintColor: inactiveTintColor, style: {backgroundColor: backgroundColor, borderTopColor: borderTopColor}}}
               screenOptions={({ route }) => ({
                 tabBarIcon: ({ focused, color, size }) => {
                   let iconName;
@@ -62,7 +60,7 @@ const Tab = ({statePreferences}) => {
                   return <Ionicons name={iconName} size={size} color={color} />;
                 },
               })}>
-                  <BottomTab.Screen name="Home"  component={HomeNavigator} />
+                  <BottomTab.Screen name="Home" component={HomeNavigator} />
                   <BottomTab.Screen name="About" component={About} />
                   <BottomTab.Screen name ="Settings" component={Settings} />
               </BottomTab.Navigator>
